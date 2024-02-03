@@ -3,6 +3,11 @@
 import orekit
 orekit.initVM()
 
+File orekitData = new File("/path/to/the/folder/orekit-data");
+DataProvidersManager manager = DataContext.getDefault().getDataProvidersManager();
+manager.addProvider(new DirectoryCrawler(orekitData));
+
+
 from org.orekit.frames import FramesFactory, TopocentricFrame
 from org.orekit.bodies import  OneAxisEllipsoid, GeodeticPoint
 from org.orekit.time import AbsoluteDate, TimeScalesFactory
@@ -24,6 +29,11 @@ import sys
 
 from orekit.pyhelpers import setup_orekit_curdir
 setup_orekit_curdir("resources")
+
+File orekitData = new File("C:/Users/Smit mehta/anaconda3/envs/OrekitPythonWrapper/orekit-data");
+DataProvidersManager manager = DataContext.getDefault().getDataProvidersManager();
+manager.addProvider(new DirectoryCrawler(orekitData));
+
 
 class PassCounter(PythonEventHandler):
     """Eventhandler that counts positive events"""
